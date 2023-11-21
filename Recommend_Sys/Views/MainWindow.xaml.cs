@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FlyleafLib;
+using FlyleafLib.MediaPlayer;
 using Recommend_Sys.Views;
 
 namespace Recommend_Sys
@@ -21,7 +24,6 @@ namespace Recommend_Sys
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Home home = new Home();
         public MainWindow()
         {
             InitializeComponent();

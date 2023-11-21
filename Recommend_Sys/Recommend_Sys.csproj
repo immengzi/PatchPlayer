@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="FlyleafLib.Controls.WPF" Version="1.2.32" />
     <PackageReference Include="HandyControl" Version="3.4.0" />
   </ItemGroup>
 
