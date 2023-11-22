@@ -18,11 +18,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Resource Include="Resources\Fonts\iconfont.ttf" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\Fonts\iconfont.ttf" />
+    <Folder Include="Models\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Recommend_Sys.Views
 {
     /// <summary>
-    /// Playground.xaml 的交互逻辑
+    /// LovePage.xaml 的交互逻辑
     /// </summary>
-    public partial class Playground : UserControl
+    public partial class LovePage : UserControl
     {
-        public Playground()
+        public LovePage()
         {
             InitializeComponent();
         }

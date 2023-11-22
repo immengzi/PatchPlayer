@@ -33,25 +33,25 @@
 
         <Grid Grid.Column="0">
             <StackPanel x:Name="ButtonGroup" Margin="0,50">
-                <Button x:Name="button1" Style="{StaticResource Nav}" >
+                <Button x:Name="button1" Style="{StaticResource Nav}" Click="button1_Click" >
                     <StackPanel>
                         <TextBlock Text="&#xe7c6;" Style="{StaticResource Icon}"/>
                         <TextBlock Text="主页"/>
                     </StackPanel>
                 </Button>
-                <Button x:Name="button2" Style="{StaticResource Nav}">
+                <Button x:Name="button2" Style="{StaticResource Nav}" Click="button2_Click">
                     <StackPanel>
                         <TextBlock Text="&#xe7e1;" Style="{StaticResource Icon}"/>
                         <TextBlock Text="喜欢"/>
                     </StackPanel>
                 </Button>
-                <Button x:Name="button3" Style="{StaticResource Nav}">
+                <Button x:Name="button3" Style="{StaticResource Nav}" Click="button3_Click">
                     <StackPanel>
                         <TextBlock Text="&#xe7c4;" Style="{StaticResource Icon}"/>
                         <TextBlock Text="推荐"/>
                     </StackPanel>
                 </Button>
-                <Button x:Name="button4" Style="{StaticResource Nav}">
+                <Button x:Name="button4" Style="{StaticResource Nav}" Click="button4_Click">
                     <StackPanel>
                         <TextBlock Text="&#xe7ae;" Style="{StaticResource Icon}"/>
                         <TextBlock Text="用户"/>
@@ -62,6 +62,7 @@
 
         <Grid Grid.Column="1">
             <!-- 其他内容 -->
+            <ContentControl Content="{Binding CurrentPage}"/>
             <fl:FlyleafHost Player="{Binding Player}" AttachedDragMove="Both" KeyBindings="Both">
                 <Viewbox>
                     <TextBlock Text="Hello Flyleaf Overlay!" Foreground="DarkOrange"/>

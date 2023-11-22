@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Recommend_Sys.Views
 {
     /// <summary>
-    /// User.xaml 的交互逻辑
+    /// UserPage.xaml 的交互逻辑
     /// </summary>
-    public partial class User : UserControl
+    public partial class UserPage : UserControl
     {
-        public User()
+        public UserPage()
         {
             InitializeComponent();
         }
