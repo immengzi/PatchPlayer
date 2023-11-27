@@ -13,8 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using FlyleafLib;
-using FlyleafLib.MediaPlayer;
 using Recommend_Sys.ViewModels;
 using Recommend_Sys.Views;
 

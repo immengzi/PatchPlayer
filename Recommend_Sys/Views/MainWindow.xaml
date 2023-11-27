@@ -5,7 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Recommend_Sys"
-        xmlns:fl="clr-namespace:FlyleafLib.Controls.WPF;assembly=FlyleafLib"
+        xmlns:media="https://github.com/mysteryx93/MediaPlayerUI.NET"
         mc:Ignorable="d"
         Title="歌曲适配" Height="450" Width="800">
     <Window.Resources>
@@ -32,6 +32,7 @@
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="0">
+            <Border BorderBrush="Gray" BorderThickness="0,0,1,0" />
             <StackPanel x:Name="ButtonGroup" Margin="0,50">
                 <Button x:Name="button1" Style="{StaticResource Nav}" Click="button1_Click" >
                     <StackPanel>
@@ -63,11 +64,9 @@
         <Grid Grid.Column="1">
             <!-- 其他内容 -->
             <ContentControl Content="{Binding CurrentPage}"/>
-            <fl:FlyleafHost Player="{Binding Player}" AttachedDragMove="Both" KeyBindings="Both">
-                <Viewbox>
-                    <TextBlock Text="Hello Flyleaf Overlay!" Foreground="DarkOrange"/>
-                </Viewbox>
-            </fl:FlyleafHost>
+            <media:MediaPlayer x:Name="Player" VerticalAlignment="Bottom" HorizontalAlignment="Stretch">
+                <media:NAudioPlayerHost Source="../../../Resources/mp3/test.mp3" AutoPlay="True"/>
+            </media:MediaPlayer>
         </Grid>
     </Grid>
 </Window>

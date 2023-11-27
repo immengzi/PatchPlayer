@@ -9,8 +9,6 @@ using System.Windows.Media;
 using System.Windows.Navigation;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using FlyleafLib;
-using FlyleafLib.MediaPlayer;
 using Recommend_Sys.Views;
 
 namespace Recommend_Sys.ViewModels
@@ -19,9 +17,6 @@ namespace Recommend_Sys.ViewModels
     {
         [ObservableProperty]
         private object? _currentPage;
-
-        [ObservableProperty]
-        private MediaPlayer? _player;
 
         public MainWindowViewModel()
         {
