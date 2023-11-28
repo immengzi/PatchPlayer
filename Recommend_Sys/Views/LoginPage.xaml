@@ -1,0 +1,16 @@
+﻿<Window x:Class="Recommend_Sys.Views.LoginPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Recommend_Sys.Views"
+        xmlns:viewModel="clr-namespace:Recommend_Sys.ViewModels"
+        mc:Ignorable="d"
+        Title="LoginPage" Height="450" Width="800">
+    <Grid>
+        <TextBlock Text="用户名" HorizontalAlignment="Left" Margin="258,183,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding Username}" HorizontalAlignment="Left" Margin="309,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210"/>
+        <TextBlock Text="密码" HorizontalAlignment="Left" Margin="270,229,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="{Binding Password}" HorizontalAlignment="Left" Margin="309,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210"/>
+    </Grid>
+</Window>
