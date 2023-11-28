@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -9,18 +10,23 @@ using System.Windows.Media;
 using System.Windows.Navigation;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Recommend_Sys.Models;
+using Recommend_Sys.Repositories;
 using Recommend_Sys.Views;
 
 namespace Recommend_Sys.ViewModels
 {
     public partial class MainWindowViewModel : ObservableObject
     {
+        private IUserRepository userRepository;
+
         [ObservableProperty]
         private object? _currentPage;
 
         public MainWindowViewModel()
         {
             Navigate("Home");
+            userRepository = new UserRepository();
         }
 
         [RelayCommand]
