@@ -7,10 +7,24 @@
         xmlns:viewModel="clr-namespace:Recommend_Sys.ViewModels"
         mc:Ignorable="d"
         Title="LoginPage" Height="450" Width="800">
-    <Grid>
+
+    <Window.DataContext>
+        <viewModel:LoginPageViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
+    </Window.Resources>
+
+    <Window.Visibility>
+        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleanToVisibility}"/>
+    </Window.Visibility>
+
+        <Grid>
         <TextBlock Text="用户名" HorizontalAlignment="Left" Margin="258,183,0,0" VerticalAlignment="Top"/>
         <TextBox Text="{Binding Username}" HorizontalAlignment="Left" Margin="309,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210"/>
         <TextBlock Text="密码" HorizontalAlignment="Left" Margin="270,229,0,0" VerticalAlignment="Top"/>
         <TextBox Text="{Binding Password}" HorizontalAlignment="Left" Margin="309,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210"/>
+        <Button Command="{Binding LoginCommand}" Content="登录" Margin="0,291,0,0" VerticalAlignment="Top" Width="100"/>
     </Grid>
 </Window>
