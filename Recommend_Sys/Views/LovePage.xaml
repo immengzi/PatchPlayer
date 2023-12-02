@@ -12,15 +12,6 @@
         <viewModels:LovePageViewModel/>
     </UserControl.DataContext>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <!--左侧导航栏-->
-            <ColumnDefinition Width="80"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid Grid.Column="1">
-
-            <Label Content="喜欢界面"/>
-
-        </Grid>
+        <Label Content="喜欢"/>
     </Grid>
 </UserControl>

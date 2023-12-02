@@ -68,6 +68,10 @@
 
         <!-- 其他内容 -->
         <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
             <!-- 当前主页面 -->
             <ContentControl Content="{Binding CurrentPage}"/>
             <!-- 播放器 -->
