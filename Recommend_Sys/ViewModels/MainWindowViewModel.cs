@@ -23,8 +23,14 @@ namespace Recommend_Sys.ViewModels
         [ObservableProperty]
         private object? _currentPage;
 
+        [ObservableProperty] private string? _homeIcon;
+        [ObservableProperty] private string? _loveIcon;
+        [ObservableProperty] private string? _playgroundIcon;
+        [ObservableProperty] private string? _userIcon;
+
         public MainWindowViewModel()
         {
+            setDefaultIcon();
             Navigate("Home");
             userRepository = new UserRepository();
         }
@@ -36,19 +42,35 @@ namespace Recommend_Sys.ViewModels
             {
                 case "Home":
                     CurrentPage = new HomePage();
+                    setDefaultIcon();
+                    HomeIcon = "\ue867";
                     break;
                 case "Love":
                     CurrentPage = new LovePage();
+                    setDefaultIcon();
+                    LoveIcon = "\ue849";
                     break;
                 case "Playground":
                     CurrentPage = new PlaygroundPage();
+                    setDefaultIcon();
+                    PlaygroundIcon = "\ue866";
                     break;
                 case "User":
                     CurrentPage = new UserPage();
+                    setDefaultIcon();
+                    UserIcon = "\ue860";
                     break;
                 default:
                     throw new ArgumentException("Invalid page name", nameof(pageName));
             }
+        }
+
+        public void setDefaultIcon()
+        {
+            HomeIcon = "\ue7c6";
+            LoveIcon = "\ue7df";
+            PlaygroundIcon = "\ue7c3";
+            UserIcon = "\ue7de";
         }
     }
 }

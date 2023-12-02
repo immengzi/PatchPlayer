@@ -12,6 +12,6 @@
         <viewModels:UserPageViewModel/>
     </UserControl.DataContext>
     <Grid>
-        <TextBlock Text="{Binding DisplayName}"/>
+        <TextBlock Text="{Binding DisplayName}" VerticalAlignment="Center" HorizontalAlignment="Stretch" TextAlignment="Center" TextWrapping="Wrap" FontSize="30"/>
     </Grid>
 </UserControl>

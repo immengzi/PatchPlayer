@@ -41,25 +41,25 @@
             <StackPanel x:Name="ButtonGroup" Margin="0,50">
                 <Button x:Name="button1" Style="{StaticResource Nav}" Click="button1_Click" >
                     <StackPanel>
-                        <TextBlock Text="&#xe7c6;" Style="{StaticResource Icon}"/>
+                        <TextBlock x:Name="HomeIcon" Text="{Binding HomeIcon}" Style="{StaticResource Icon}"/>
                         <TextBlock Text="主页"/>
                     </StackPanel>
                 </Button>
                 <Button x:Name="button2" Style="{StaticResource Nav}" Click="button2_Click">
                     <StackPanel>
-                        <TextBlock Text="&#xe7e1;" Style="{StaticResource Icon}"/>
+                        <TextBlock x:Name="LoveIcon" Text="{Binding LoveIcon}" Style="{StaticResource Icon}"/>
                         <TextBlock Text="喜欢"/>
                     </StackPanel>
                 </Button>
                 <Button x:Name="button3" Style="{StaticResource Nav}" Click="button3_Click">
                     <StackPanel>
-                        <TextBlock Text="&#xe7c4;" Style="{StaticResource Icon}"/>
+                        <TextBlock x:Name="PlayGroundIcon" Text="{Binding PlaygroundIcon}" Style="{StaticResource Icon}"/>
                         <TextBlock Text="推荐"/>
                     </StackPanel>
                 </Button>
                 <Button x:Name="button4" Style="{StaticResource Nav}" Click="button4_Click">
                     <StackPanel>
-                        <TextBlock Text="&#xe7ae;" Style="{StaticResource Icon}"/>
+                        <TextBlock x:Name="UserIcon" Text="{Binding UserIcon}" Style="{StaticResource Icon}"/>
                         <TextBlock Text="用户"/>
                     </StackPanel>
                 </Button>
