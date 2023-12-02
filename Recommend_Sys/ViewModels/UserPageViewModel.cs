@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Recommend_Sys.ViewModels
 {
-    class UserPageViewModel
+    public partial class UserPageViewModel : ObservableObject
     {
+        public UserPageViewModel()
+        {
+
+        }
     }
 }

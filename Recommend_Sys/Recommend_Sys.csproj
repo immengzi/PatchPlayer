@@ -27,8 +27,4 @@
     <Resource Include="Resources\Fonts\iconfont.ttf" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
 </Project>

@@ -3,10 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Recommend_Sys.ViewModels
 {
-    class HomePageViewModel
+    public partial class HomePageViewModel : ObservableObject
     {
+        [ObservableProperty]
+        private string? _song;
+
+        public HomePageViewModel()
+        {
+
+        }
     }
 }
