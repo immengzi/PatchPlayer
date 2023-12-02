@@ -12,6 +12,6 @@
         <viewModels:UserPageViewModel/>
     </UserControl.DataContext>
     <Grid>
-        <Label Content="用户"/>
+        <TextBlock Text="{Binding DisplayName}"/>
     </Grid>
 </UserControl>
