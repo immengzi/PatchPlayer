@@ -16,22 +16,19 @@
 
     </UserControl.Resources>
     <Grid>
-        <hc:SearchBar HorizontalAlignment="Center"
-                      Command="{Binding SearchSongCommand}"
-                      CommandParameter="{Binding Text,RelativeSource={RelativeSource Self}}"
-                      hc:InfoElement.Placeholder="hi"
-                      hc:TitleElement.Title="请输入歌曲名称："
-                      hc:TitleElement.TitlePlacement="Left"
-                      Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="320"
-        />
-            <ListView d:ItemsSource="{Binding SongList}" Margin="0,80,0,0">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn Width="80" Header="歌曲" DisplayMemberBinding="{Binding Song}"/>
-                        <GridViewColumn Width="100" Header="歌手" DisplayMemberBinding="{Binding Singer}"/>
-                        <GridViewColumn Width="200" Header="专辑" DisplayMemberBinding="{Binding Album}"/>
-                    </GridView>
-                </ListView.View>
-            </ListView>
+        <Grid HorizontalAlignment="Center" Margin="0,30,0,0">
+            <TextBox Text="{Binding Text}"  TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Margin="20,0,60,0"/>
+            <Button Content="搜" Command="{Binding SearchSongCommand}" VerticalAlignment="Top" Width="40" HorizontalAlignment="Left" Margin="340,0,0,0"/>
         </Grid>
+        
+        <ListView d:ItemsSource="{Binding Songs}" Margin="0,80,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="80" Header="歌名" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Width="100" Header="歌手" DisplayMemberBinding="{Binding Singer}"/>
+                    <GridViewColumn Width="200" Header="专辑" DisplayMemberBinding="{Binding Album}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
 </UserControl>
