@@ -20,13 +20,13 @@
             <TextBox Text="{Binding Text}"  TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Margin="20,0,60,0"/>
             <Button Content="搜" Command="{Binding SearchSongCommand}" VerticalAlignment="Top" Width="40" HorizontalAlignment="Left" Margin="340,0,0,0"/>
         </Grid>
-        
-        <ListView d:ItemsSource="{Binding Songs}" Margin="0,80,0,0">
+
+        <ListView x:Name="SongListView" ItemsSource="{Binding Songs}" Margin="0,80,0,0">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="80" Header="歌名" DisplayMemberBinding="{Binding Name}"/>
-                    <GridViewColumn Width="100" Header="歌手" DisplayMemberBinding="{Binding Singer}"/>
-                    <GridViewColumn Width="200" Header="专辑" DisplayMemberBinding="{Binding Album}"/>
+                    <GridViewColumn Width="100" Header="歌名" DisplayMemberBinding="{Binding name}"/>
+                    <GridViewColumn Width="100" Header="歌手" DisplayMemberBinding="{Binding artist_name}"/>
+                    <GridViewColumn Width="100" Header="专辑" DisplayMemberBinding="{Binding album_name}"/>
                 </GridView>
             </ListView.View>
         </ListView>

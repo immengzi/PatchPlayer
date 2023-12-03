@@ -76,7 +76,7 @@
             <ContentControl Content="{Binding CurrentPage}"/>
             <!-- 播放器 -->
             <media:MediaPlayer x:Name="Player" VerticalAlignment="Bottom" HorizontalAlignment="Stretch">
-                <media:NAudioPlayerHost Source="../../../Resources/mp3/test.mp3" AutoPlay="True"/>
+                <media:NAudioPlayerHost Source="../../../Resources/mp3/test.mp3" AutoPlay="False"/>
             </media:MediaPlayer>
         </Grid>
     </Grid>
