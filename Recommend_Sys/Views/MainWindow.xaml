@@ -7,6 +7,7 @@
         xmlns:local="clr-namespace:Recommend_Sys"
         xmlns:media="https://github.com/mysteryx93/MediaPlayerUI.NET"
         xmlns:viewModels="clr-namespace:Recommend_Sys.ViewModels"
+        xmlns:services="clr-namespace:Recommend_Sys.Services"
         mc:Ignorable="d"
         Title="歌曲适配" Height="450" Width="800">
     <Window.DataContext>
@@ -76,7 +77,8 @@
             <ContentControl Content="{Binding CurrentPage}"/>
             <!-- 播放器 -->
             <media:MediaPlayer x:Name="Player" VerticalAlignment="Bottom" HorizontalAlignment="Stretch">
-                <media:NAudioPlayerHost Source="../../../Resources/mp3/test.mp3" AutoPlay="False"/>
+                <!--<media:NAudioPlayerHost Source="../../../Resources/mp3/test.mp3" AutoPlay="False"/>-->
+                <media:NAudioPlayerHost Source="{Binding SongSource}" AutoPlay="True"/>
             </media:MediaPlayer>
         </Grid>
     </Grid>

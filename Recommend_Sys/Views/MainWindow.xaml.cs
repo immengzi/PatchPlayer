@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Recommend_Sys.Services;
 using Recommend_Sys.ViewModels;
 using Recommend_Sys.Views;
 
@@ -26,7 +27,6 @@ namespace Recommend_Sys
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainWindowViewModel();
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

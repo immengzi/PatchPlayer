@@ -10,8 +10,11 @@ using System.Windows.Media;
 using System.Windows.Navigation;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using HanumanInstitute.MediaPlayer.Wpf.NAudio;
+using Microsoft.Extensions.DependencyInjection;
 using Recommend_Sys.Models;
 using Recommend_Sys.Repositories;
+using Recommend_Sys.Services;
 using Recommend_Sys.Views;
 
 namespace Recommend_Sys.ViewModels
@@ -23,6 +26,9 @@ namespace Recommend_Sys.ViewModels
         [ObservableProperty]
         private object? _currentPage;
 
+        [ObservableProperty]
+        private string? _songSource;
+
         [ObservableProperty] private string? _homeIcon;
         [ObservableProperty] private string? _loveIcon;
         [ObservableProperty] private string? _playgroundIcon;
@@ -30,7 +36,7 @@ namespace Recommend_Sys.ViewModels
 
         public MainWindowViewModel()
         {
-            setDefaultIcon();
+            SetDefaultIcon();
             Navigate("Home");
             userRepository = new UserRepository();
         }
@@ -41,23 +47,26 @@ namespace Recommend_Sys.ViewModels
             switch (pageName)
             {
                 case "Home":
-                    CurrentPage = new HomePage();
-                    setDefaultIcon();
+                    CurrentPage = new HomePage
+                    {
+                        DataContext = new HomePageViewModel(this)
+                    };
+                    SetDefaultIcon();
                     HomeIcon = "\ue867";
                     break;
                 case "Love":
                     CurrentPage = new LovePage();
-                    setDefaultIcon();
+                    SetDefaultIcon();
                     LoveIcon = "\ue849";
                     break;
                 case "Playground":
                     CurrentPage = new PlaygroundPage();
-                    setDefaultIcon();
+                    SetDefaultIcon();
                     PlaygroundIcon = "\ue866";
                     break;
                 case "User":
                     CurrentPage = new UserPage();
-                    setDefaultIcon();
+                    SetDefaultIcon();
                     UserIcon = "\ue860";
                     break;
                 default:
@@ -65,7 +74,7 @@ namespace Recommend_Sys.ViewModels
             }
         }
 
-        public void setDefaultIcon()
+        public void SetDefaultIcon()
         {
             HomeIcon = "\ue7c6";
             LoveIcon = "\ue7df";

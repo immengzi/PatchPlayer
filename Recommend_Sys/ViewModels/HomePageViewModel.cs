@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Xml.Linq;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -19,6 +20,14 @@ namespace Recommend_Sys.ViewModels
 {
     public partial class HomePageViewModel : ObservableObject
     {
+        private readonly MainWindowViewModel _mainWindowViewModel;
+        
+        public string? SongSource
+        {
+            get { return _mainWindowViewModel.SongSource; }
+            set { _mainWindowViewModel.SongSource = value; }
+        }
+
         [ObservableProperty]
         private ObservableCollection<Song> _songs;
 
@@ -58,7 +67,28 @@ namespace Recommend_Sys.ViewModels
 
         public HomePageViewModel()
         {
-            _songs = new ObservableCollection<Song>();
         }
+
+        public HomePageViewModel(MainWindowViewModel mainWindowViewModel)
+        {
+            _songs = new ObservableCollection<Song>();
+            _mainWindowViewModel = mainWindowViewModel;
+        }
+
+        [RelayCommand]
+        private void ChangeSongSource(string songSource)
+        {
+            SongSource = songSource;
+        }
+
+        [RelayCommand]
+        private void PlaySong(Song song)
+        {
+            if (song.url != null)
+            {
+                ChangeSongSource(song.url);
+            }
+        }
+
     }
 }

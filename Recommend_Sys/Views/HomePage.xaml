@@ -6,6 +6,8 @@
              xmlns:local="clr-namespace:Recommend_Sys.Views"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              xmlns:viewModels="clr-namespace:Recommend_Sys.ViewModels"
+             xmlns:data="clr-namespace:System.Data;assembly=System.Data.Common"
+             xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.DataContext>
@@ -13,22 +15,31 @@
     </UserControl.DataContext>
 
     <UserControl.Resources>
-
     </UserControl.Resources>
+
     <Grid>
         <Grid HorizontalAlignment="Center" Margin="0,30,0,0">
             <TextBox Text="{Binding Text}"  TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Margin="20,0,60,0"/>
             <Button Content="搜" Command="{Binding SearchSongCommand}" VerticalAlignment="Top" Width="40" HorizontalAlignment="Left" Margin="340,0,0,0"/>
         </Grid>
 
-        <ListView x:Name="SongListView" ItemsSource="{Binding Songs}" Margin="0,80,0,0">
+        <ListView x:Name="SongListView"
+                  ItemsSource="{Binding Songs}"
+                  Margin="0,80,0,0">
+            <b:Interaction.Triggers>
+                <b:EventTrigger EventName="MouseDoubleClick">
+                    <b:InvokeCommandAction Command="{Binding PlaySongCommand}"
+                                           CommandParameter="{Binding ElementName=SongListView, Path=SelectedItem}"/>
+                </b:EventTrigger>
+            </b:Interaction.Triggers>
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="100" Header="歌名" DisplayMemberBinding="{Binding name}"/>
+                    <GridViewColumn Width="100" Header="标题" DisplayMemberBinding="{Binding name}"/>
                     <GridViewColumn Width="100" Header="歌手" DisplayMemberBinding="{Binding artist_name}"/>
                     <GridViewColumn Width="100" Header="专辑" DisplayMemberBinding="{Binding album_name}"/>
                 </GridView>
             </ListView.View>
         </ListView>
+        <!--<Button Content="点我切换歌曲" Command="{Binding ChangeSongSourceCommand}" HorizontalAlignment="Left" Margin="80,30,0,0" VerticalAlignment="Top"/>-->
     </Grid>
 </UserControl>
