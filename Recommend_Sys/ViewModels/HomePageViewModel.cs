@@ -78,7 +78,7 @@ namespace Recommend_Sys.ViewModels
 
         public HomePageViewModel(MainWindowViewModel mainWindowViewModel)
         {
-            _searchIcon = "\ue8ef";
+            SearchIcon = "\ue8ef";
             _songs = new ObservableCollection<Song>();
             _mainWindowViewModel = mainWindowViewModel;
         }

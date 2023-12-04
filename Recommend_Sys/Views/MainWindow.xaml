@@ -12,7 +12,7 @@
         WindowStyle="None"
         >
     <WindowChrome.WindowChrome>
-        <WindowChrome CaptionHeight="32" ResizeBorderThickness="{x:Static SystemParameters.WindowResizeBorderThickness}" />
+        <WindowChrome CaptionHeight="40" ResizeBorderThickness="{x:Static SystemParameters.WindowResizeBorderThickness}" />
     </WindowChrome.WindowChrome>
     <Window.DataContext>
         <viewModels:MainWindowViewModel/>
@@ -105,7 +105,7 @@
     </Window.Resources>
     <Grid>
         <!-- 标题栏 -->
-        <Grid Height="60" VerticalAlignment="Top" Background="#aeaeae">
+        <Grid Height="40" VerticalAlignment="Top" Background="#aeaeae">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
@@ -196,7 +196,7 @@
 
             <!-- 导航栏 -->
             <Grid Grid.Column="0">
-                <StackPanel x:Name="ButtonGroup" Margin="0,60">
+                <StackPanel x:Name="ButtonGroup" Margin="0,40">
                     <Button x:Name="button1" Style="{StaticResource Nav}" Click="button1_Click" >
                         <StackPanel>
                             <TextBlock x:Name="HomeIcon" Text="{Binding HomeIcon}" Style="{StaticResource Icon}"/>
