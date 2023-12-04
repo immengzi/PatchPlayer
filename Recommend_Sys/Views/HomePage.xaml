@@ -15,56 +15,59 @@
 
     <UserControl.Resources>
         <Style x:Key="Icon" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontSize" Value="20" />
             <Setter Property="FontFamily" Value="../../../Resources/Fonts/#iconfont" />
         </Style>
     </UserControl.Resources>
 
-    <Grid>
-        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top"
-              Margin="0,40,0,0" Height="32" 
-              Background="LightGray">
-            <Button Command="{Binding SearchSongCommand}"
+    <Border BorderBrush="#8B8989" BorderThickness="0,0,0,0">
+        <Grid>
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top"
+              Margin="0,45,0,0" Height="45"
+              Background="#e6e6e6">
+                <Button Command="{Binding SearchSongCommand}"
                     Margin="10,0,0,0"
-                    Width="35" HorizontalAlignment="Left"
-                    VerticalAlignment="Center"
-                    Height="32"
+                    Width="40" Height="45"
+                    HorizontalAlignment="Left" VerticalAlignment="Center"
                     Background="Transparent"
                     BorderBrush="Transparent">
-                <StackPanel>
-                    <TextBlock x:Name="SearchIcon"
+                    <StackPanel>
+                        <TextBlock x:Name="SearchIcon"
                                Text="{Binding SearchIcon}"
                                Style="{StaticResource Icon}"/>
-                </StackPanel>
-            </Button>
-            <TextBox x:Name="SearchTextBox"
+                    </StackPanel>
+                </Button>
+                <hc:TextBox x:Name="SearchTextBox"
+                     hc:InfoElement.Placeholder="请输入歌曲名称"
                      Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"
                      TextWrapping="NoWrap" VerticalAlignment="Center"
-                     Margin="45,0,0,0"
+                     FontSize="18"
+                     Margin="55,0,0,0"
                      Background="Transparent"
                      BorderBrush="Transparent">
-                <TextBox.InputBindings>
-                    <KeyBinding Command="{Binding SearchSongCommand}" Key="Enter" />
-                </TextBox.InputBindings>
-            </TextBox>
-        </Grid>
-        <ListView x:Name="SongListView"
+                    <TextBox.InputBindings>
+                        <KeyBinding Command="{Binding SearchSongCommand}" Key="Enter" />
+                    </TextBox.InputBindings>
+                </hc:TextBox>
+            </Grid>
+            <ListView x:Name="SongListView"
                   ItemsSource="{Binding Songs}"
-                  Margin="0,72,0,0">
-            <b:Interaction.Triggers>
-                <b:EventTrigger EventName="MouseDoubleClick">
-                    <b:InvokeCommandAction Command="{Binding PlaySongCommand}"
+                  Margin="0,90,0,0">
+                <b:Interaction.Triggers>
+                    <b:EventTrigger EventName="MouseDoubleClick">
+                        <b:InvokeCommandAction Command="{Binding PlaySongCommand}"
                                            CommandParameter="{Binding ElementName=SongListView, Path=SelectedItem}"/>
-                </b:EventTrigger>
-            </b:Interaction.Triggers>
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Width="200" Header="标题" DisplayMemberBinding="{Binding name}"/>
-                    <GridViewColumn Width="200" Header="歌手" DisplayMemberBinding="{Binding artist_name}"/>
-                    <GridViewColumn Width="200" Header="专辑" DisplayMemberBinding="{Binding album_name}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <!--<Button Content="点我切换歌曲" Command="{Binding ChangeSongSourceCommand}" HorizontalAlignment="Left" Margin="80,30,0,0" VerticalAlignment="Top"/>-->
-    </Grid>
+                    </b:EventTrigger>
+                </b:Interaction.Triggers>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="200" Header="标题" DisplayMemberBinding="{Binding name}"/>
+                        <GridViewColumn Width="200" Header="歌手" DisplayMemberBinding="{Binding artist_name}"/>
+                        <GridViewColumn Width="200" Header="专辑" DisplayMemberBinding="{Binding album_name}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <!--<Button Content="点我切换歌曲" Command="{Binding ChangeSongSourceCommand}" HorizontalAlignment="Left" Margin="80,30,0,0" VerticalAlignment="Top"/>-->
+        </Grid>
+    </Border>
 </UserControl>

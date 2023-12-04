@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Recommend_Sys.Views"
         xmlns:viewModel="clr-namespace:Recommend_Sys.ViewModels"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
         mc:Ignorable="d"
-        Title="LoginPage" Height="450" Width="800">
+        Title="登录" Height="680" Width="480">
 
     <Window.DataContext>
         <viewModel:LoginPageViewModel/>
@@ -21,10 +23,22 @@
     </Window.Visibility>
 
         <Grid>
-        <TextBlock Text="用户名" HorizontalAlignment="Left" Margin="258,183,0,0" VerticalAlignment="Top"/>
-        <TextBox Text="{Binding Username}" HorizontalAlignment="Left" Margin="309,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210"/>
-        <TextBlock Text="密码" HorizontalAlignment="Left" Margin="270,229,0,0" VerticalAlignment="Top"/>
-        <TextBox Text="{Binding Password}" HorizontalAlignment="Left" Margin="309,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210"/>
-        <Button Command="{Binding LoginCommand}" Content="登录" Margin="0,291,0,0" VerticalAlignment="Top" Width="100"/>
+        <Image Source="{svgc:SvgImage Source=../Resources/img/headphones.svg}"
+               HorizontalAlignment="Center" VerticalAlignment="Top"
+               Height="200" Margin="0,60"/>
+        <hc:TextBox Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" Margin="60,300,60,0"
+                        Height="60" FontSize="24" TextWrapping="NoWrap" VerticalAlignment="Top" hc:InfoElement.Placeholder="用户名">
+            <TextBox.InputBindings>
+                <KeyBinding Command="{Binding LoginCommand}" Key="Enter" />
+            </TextBox.InputBindings>
+        </hc:TextBox>
+        <hc:TextBox Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" Margin="60,380,60,0"
+                    Height="60" FontSize="24" TextWrapping="NoWrap" VerticalAlignment="Top" hc:InfoElement.Placeholder="密码">
+            <TextBox.InputBindings>
+                <KeyBinding Command="{Binding LoginCommand}" Key="Enter" />
+            </TextBox.InputBindings>
+        </hc:TextBox>
+        <Button Command="{Binding LoginCommand}" HorizontalAlignment="Stretch" Margin="60,460,60,0"
+                Height="60" FontSize="24" Content="登录" VerticalAlignment="Top" Background="#E8E8E8"/>
     </Grid>
 </Window>

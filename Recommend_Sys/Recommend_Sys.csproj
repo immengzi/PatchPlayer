@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <None Remove="Resources\Fonts\iconfont.ttf" />
+    <None Remove="Resources\img\headphones.svg" />
+    <None Remove="Resources\img\musiclist.svg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,11 +25,14 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.77" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="SharpVectors.Wpf" Version="1.8.2" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Resources\Fonts\iconfont.ttf" />
+    <Resource Include="Resources\img\headphones.svg" />
+    <Resource Include="Resources\img\musiclist.svg" />
   </ItemGroup>
 
 </Project>

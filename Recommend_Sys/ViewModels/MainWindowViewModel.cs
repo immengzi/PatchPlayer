@@ -39,7 +39,7 @@ namespace Recommend_Sys.ViewModels
 
         public MainWindowViewModel()
         {
-            WindowTitle = "Patch Player";
+            WindowTitle = "PatchPlayer";
             SetDefaultIcon();
             Navigate("Home");
             userRepository = new UserRepository();

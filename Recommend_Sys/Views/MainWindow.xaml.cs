@@ -29,6 +29,7 @@ namespace Recommend_Sys
         public MainWindow()
         {
             InitializeComponent();
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

@@ -22,6 +22,7 @@ namespace Recommend_Sys.Views
         public LoginPage()
         {
             InitializeComponent();
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
     }
 }

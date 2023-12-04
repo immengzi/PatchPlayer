@@ -7,8 +7,10 @@
         xmlns:local="clr-namespace:Recommend_Sys"
         xmlns:media="https://github.com/mysteryx93/MediaPlayerUI.NET"
         xmlns:viewModels="clr-namespace:Recommend_Sys.ViewModels"
+        xmlns:svg="http://sharpvectors.codeplex.com/runtime/"
+        xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
         mc:Ignorable="d"
-        Title="歌曲适配" Height="600" Width="800"
+        Title="PatchPlayer" Height="600" Width="800"
         WindowStyle="None"
         >
     <WindowChrome.WindowChrome>
@@ -23,8 +25,8 @@
             <Setter Property="Margin" Value="15" />
             <Setter Property="MaxHeight" Value="70" />
             <Setter Property="MinHeight" Value="40"/>
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="Background" Value="#CFCFCF"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
         </Style >
         <!-- 为图标定义样式 -->
         <Style x:Key="Icon" TargetType="TextBlock">
@@ -105,7 +107,7 @@
     </Window.Resources>
     <Grid>
         <!-- 标题栏 -->
-        <Grid Height="40" VerticalAlignment="Top" Background="#aeaeae">
+        <Grid Height="45" VerticalAlignment="Top" Background="#a4a4a4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="*" />
@@ -113,15 +115,11 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <Image
-		Grid.Column="0"
-		Width="22"
-		Height="22"
-		Margin="4"
-		Source="/Resources/img/music.svg" />
+            <Image Source="{svgc:SvgImage Source=../Resources/img/musiclist.svg}"
+                   Margin="10,0" Width="60" MaxHeight="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             <TextBlock
 		Grid.Column="1"
-		Margin="4 0 0 0"
+		Margin="15,0"
 		VerticalAlignment="Center"
 		FontSize="20"
 		Text="{Binding WindowTitle}">
@@ -196,7 +194,7 @@
 
             <!-- 导航栏 -->
             <Grid Grid.Column="0">
-                <StackPanel x:Name="ButtonGroup" Margin="0,40">
+                <StackPanel x:Name="ButtonGroup" Margin="0,45,0,0" Background="#CFCFCF">
                     <Button x:Name="button1" Style="{StaticResource Nav}" Click="button1_Click" >
                         <StackPanel>
                             <TextBlock x:Name="HomeIcon" Text="{Binding HomeIcon}" Style="{StaticResource Icon}"/>
