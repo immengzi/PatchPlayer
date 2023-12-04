@@ -24,6 +24,9 @@ namespace Recommend_Sys.ViewModels
         private IUserRepository userRepository;
 
         [ObservableProperty]
+        private object? _windowTitle;
+
+        [ObservableProperty]
         private object? _currentPage;
 
         [ObservableProperty]
@@ -36,6 +39,7 @@ namespace Recommend_Sys.ViewModels
 
         public MainWindowViewModel()
         {
+            WindowTitle = "Patch Player";
             SetDefaultIcon();
             Navigate("Home");
             userRepository = new UserRepository();
