@@ -96,6 +96,10 @@ namespace Recommend_Sys.ViewModels
             {
                 ChangeSongSource(song.url);
             }
+            else
+            {
+                return;
+            }
         }
 
     }
