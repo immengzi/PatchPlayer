@@ -4,9 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Recommend_Sys.Views"
-             xmlns:hc="https://handyorg.github.io/handycontrol"
              xmlns:viewModels="clr-namespace:Recommend_Sys.ViewModels"
              xmlns:data="clr-namespace:System.Data;assembly=System.Data.Common"
+             xmlns:hc="https://handyorg.github.io/handycontrol"
              xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
@@ -15,17 +15,38 @@
     </UserControl.DataContext>
 
     <UserControl.Resources>
+        <Style x:Key="Icon" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontFamily" Value="../../../Resources/Fonts/#iconfont" />
+        </Style>
     </UserControl.Resources>
 
     <Grid>
-        <Grid HorizontalAlignment="Center" Margin="0,30,0,0">
-            <TextBox Text="{Binding Text}"  TextWrapping="Wrap" VerticalAlignment="Top" Width="320" Margin="20,0,60,0"/>
-            <Button Content="搜" Command="{Binding SearchSongCommand}" VerticalAlignment="Top" Width="40" HorizontalAlignment="Left" Margin="340,0,0,0"/>
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top"
+              Margin="0,40,0,0" Height="32" 
+              Background="LightGray">
+            <Button Command="{Binding SearchSongCommand}"
+                    Width="35" HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Height="32"
+                    Background="Transparent"
+                    BorderBrush="Transparent">
+                <StackPanel>
+                    <TextBlock x:Name="SearchIcon"
+                               Text="{Binding SearchIcon}"
+                               Style="{StaticResource Icon}"/>
+                </StackPanel>
+            </Button>
+            <TextBox Text="{Binding Text}"
+                     TextWrapping="Wrap" VerticalAlignment="Center"
+                     Margin="35,0,0,0"
+                     Background="Transparent"
+                     BorderBrush="Transparent">
+            </TextBox>
         </Grid>
-
         <ListView x:Name="SongListView"
                   ItemsSource="{Binding Songs}"
-                  Margin="0,80,0,0">
+                  Margin="0,72,0,0">
             <b:Interaction.Triggers>
                 <b:EventTrigger EventName="MouseDoubleClick">
                     <b:InvokeCommandAction Command="{Binding PlaySongCommand}"

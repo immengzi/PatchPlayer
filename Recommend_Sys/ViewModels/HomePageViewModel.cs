@@ -34,11 +34,18 @@ namespace Recommend_Sys.ViewModels
         [ObservableProperty]
         private string? _text;
 
+        [ObservableProperty]
+        private string? _searchIcon;
+
         [RelayCommand]
         public async Task SearchSongAsync()
         {
             try
             {
+                if (string.IsNullOrEmpty(_text))
+                {
+                    return;
+                }
                 var searchSongs = await Task.Run(() => GetSong.GetSongAsync(songName: _text));
 
                 // 在 UI 线程上更新属性
@@ -71,6 +78,7 @@ namespace Recommend_Sys.ViewModels
 
         public HomePageViewModel(MainWindowViewModel mainWindowViewModel)
         {
+            SearchIcon = "\ue8ef";
             _songs = new ObservableCollection<Song>();
             _mainWindowViewModel = mainWindowViewModel;
         }
