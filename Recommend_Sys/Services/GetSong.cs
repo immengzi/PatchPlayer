@@ -11,13 +11,13 @@ namespace Recommend_Sys.Services
 {
     public class GetSong
     {
-        public static async Task<List<Song>> GetSongAsync(string songName)
+        public static async Task<List<SongModel>> GetSongAsync(string songName)
         {
-            List<Song> songs = new List<Song>();
+            List<SongModel> songs = new List<SongModel>();
             //云服务器
-            //string apiEndpoint = "http://api.immengzi.wiki:3000";
+            string apiEndpoint = "http://api.immengzi.wiki:3000";
             //本地服务器
-            string apiEndpoint = "http://localhost:3000";
+            //string apiEndpoint = "http://localhost:3000";
             string searchQuery = $"/cloudsearch?keywords={songName}";
             string apiUrl = $"{apiEndpoint}{searchQuery}";
             string searchResponse = await GetApiData(apiUrl);
@@ -52,7 +52,7 @@ namespace Recommend_Sys.Services
                         string? url = (string?)item["url"];
                         if (!string.IsNullOrEmpty(url))
                         {
-                            Song s = new Song()
+                            SongModel s = new SongModel()
                             {
                                 name = realSongName,
                                 id = (int)songId,

@@ -29,7 +29,7 @@ namespace Recommend_Sys.ViewModels
         }
 
         [ObservableProperty]
-        private ObservableCollection<Song> _songs;
+        private ObservableCollection<SongModel> _songs;
 
         [ObservableProperty]
         private string? _text;
@@ -55,7 +55,7 @@ namespace Recommend_Sys.ViewModels
 
                     foreach (var searchSong in searchSongs)
                     {
-                        Songs.Add(new Song()
+                        Songs.Add(new SongModel()
                         {
                             name = searchSong.name,
                             artist_name = searchSong.artist_name,
@@ -79,7 +79,7 @@ namespace Recommend_Sys.ViewModels
         public HomePageViewModel(MainWindowViewModel mainWindowViewModel)
         {
             SearchIcon = "\ue8ef";
-            _songs = new ObservableCollection<Song>();
+            _songs = new ObservableCollection<SongModel>();
             _mainWindowViewModel = mainWindowViewModel;
         }
 
@@ -90,11 +90,11 @@ namespace Recommend_Sys.ViewModels
         }
 
         [RelayCommand]
-        private void PlaySong(Song song)
+        private void PlaySong(SongModel songModel)
         {
-            if (song.url != null)
+            if (songModel.url != null)
             {
-                ChangeSongSource(song.url);
+                ChangeSongSource(songModel.url);
             }
             else
             {

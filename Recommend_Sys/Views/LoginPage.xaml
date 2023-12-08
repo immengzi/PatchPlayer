@@ -24,21 +24,39 @@
 
         <Grid>
         <Image Source="{svgc:SvgImage Source=../Resources/img/headphones.svg}"
-               HorizontalAlignment="Center" VerticalAlignment="Top"
-               Height="200" Margin="0,60"/>
-        <hc:TextBox Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" Margin="60,300,60,0"
-                        Height="60" FontSize="24" TextWrapping="NoWrap" VerticalAlignment="Top" hc:InfoElement.Placeholder="用户名">
+               HorizontalAlignment="Center"
+               VerticalAlignment="Top"
+               Height="200"
+               Margin="0,60"/>
+        <hc:TextBox Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
+                    Margin="60,300,60,0"
+                    HorizontalAlignment="Stretch" VerticalAlignment="Top" 
+                    Height="60"
+                    FontSize="24"
+                    TextWrapping="NoWrap" 
+                    hc:InfoElement.Placeholder="用户名">
             <TextBox.InputBindings>
                 <KeyBinding Command="{Binding LoginCommand}" Key="Enter" />
             </TextBox.InputBindings>
         </hc:TextBox>
-        <hc:TextBox Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" Margin="60,380,60,0"
-                    Height="60" FontSize="24" TextWrapping="NoWrap" VerticalAlignment="Top" hc:InfoElement.Placeholder="密码">
+        <hc:TextBox Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" 
+                    Margin="60,380,60,0"
+                    HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                    Height="60"
+                    FontSize="24"
+                    TextWrapping="NoWrap" 
+                    hc:InfoElement.Placeholder="密码">
             <TextBox.InputBindings>
                 <KeyBinding Command="{Binding LoginCommand}" Key="Enter" />
             </TextBox.InputBindings>
         </hc:TextBox>
-        <Button Command="{Binding LoginCommand}" HorizontalAlignment="Stretch" Margin="60,460,60,0"
-                Height="60" FontSize="24" Content="登录" VerticalAlignment="Top" Background="#E8E8E8"/>
+        <Button Command="{Binding LoginCommand}"
+                Margin="60,460,60,0"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Top"
+                Height="60" 
+                FontSize="24"
+                Content="登录"  
+                Background="#E8E8E8"/>
     </Grid>
 </Window>

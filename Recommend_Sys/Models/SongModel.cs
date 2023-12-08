@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Recommend_Sys.Models
 {
-    public class Song
+    public class SongModel
     {
         public string name { get; set; }
         public int id { get; set; }
