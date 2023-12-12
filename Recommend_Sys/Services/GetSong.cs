@@ -15,7 +15,7 @@ namespace Recommend_Sys.Services
         {
             List<SongModel> songs = new List<SongModel>();
             //云服务器
-            //string apiEndpoint = "http://api.immengzi.wiki:3000";
+            //string apiEndpoint = "http://ali.mengzi.li:3000";
             //本地服务器
             string apiEndpoint = "http://localhost:3000";
             string searchQuery = $"/cloudsearch?keywords={songName}";
