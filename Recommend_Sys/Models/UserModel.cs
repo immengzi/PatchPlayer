@@ -11,5 +11,6 @@ namespace Recommend_Sys.Models
         public string Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+        public List<SongModel> loveSongs { get; set; }
     }
 }

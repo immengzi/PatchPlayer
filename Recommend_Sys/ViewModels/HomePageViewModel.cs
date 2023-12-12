@@ -15,6 +15,7 @@ using HandyControl.Controls;
 using Recommend_Sys.Models;
 using Recommend_Sys.Services;
 using MessageBox = HandyControl.Controls.MessageBox;
+using Recommend_Sys.Repositories;
 
 namespace Recommend_Sys.ViewModels
 {
@@ -102,5 +103,19 @@ namespace Recommend_Sys.ViewModels
             }
         }
 
+        [RelayCommand]
+        private void AddToLove(SongModel songModel)
+        {
+            if (songModel.url != null)
+            {
+                LoveSongRepository loveSongRepository = new LoveSongRepository();
+                loveSongRepository.AddLoveSong(_mainWindowViewModel.CurrentUser.Id, songModel);
+                MessageBox.Show("添加成功");
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }

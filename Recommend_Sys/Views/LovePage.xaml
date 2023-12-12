@@ -12,9 +12,12 @@
     </UserControl.DataContext>
     <Grid>
         <ListView x:Name="SongListView"
-                  ItemsSource="{Binding Songs}"
-                  Margin="0,45,0,0">
+                  ItemsSource="{Binding Lovesongs}"
+                  Margin="0,45,0,0" >
             <b:Interaction.Triggers>
+                <b:EventTrigger EventName="Loaded">
+                    <b:InvokeCommandAction Command="{Binding LoadLoveSongsCommand}"/>
+                </b:EventTrigger>
                 <b:EventTrigger EventName="MouseDoubleClick">
                     <b:InvokeCommandAction Command="{Binding PlaySongCommand}"
                                            CommandParameter="{Binding ElementName=SongListView, Path=SelectedItem}"/>
