@@ -57,11 +57,11 @@ namespace Recommend_Sys.ViewModels
         private void GetPlaylists()
         {
            if (CurrentUser != null)
-            {
+           {
                 LoveSongRepository loveSongRepository = new LoveSongRepository();
                 var lovesongs = loveSongRepository.GetLoveSongs(CurrentUser.Id);
                 CurrentUser.loveSongs = lovesongs;
-            }
+           }
         }
 
         [RelayCommand]

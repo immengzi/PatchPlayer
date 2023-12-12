@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Recommend_Sys.Models;
@@ -22,44 +23,43 @@ namespace Recommend_Sys.ViewModels
             get { return _mainWindowViewModel.SongSource; }
             set { _mainWindowViewModel.SongSource = value; }
         }
+
         private IUserRepository userRepository;
-        public UserModel? CurrentUser
-        {
-            get
-            {
-               
-                return _mainWindowViewModel.CurrentUser;
-            }
-        }
+        private LoveSongRepository loveSongRepository;
 
         [ObservableProperty]
         private ObservableCollection<SongModel> _lovesongs;
 
-
-
         public LovePageViewModel()
         {
             userRepository = new UserRepository();
-
-        }
-        [RelayCommand]
-        public void LoadLoveSongs()
-        {
-            MessageBox.Show("LoadLoveSongs");
-            var user = userRepository.GetByUsername(Thread.CurrentPrincipal.Identity.Name);
-            LoveSongRepository loveSongRepository = new LoveSongRepository();
-            var lovesongs = loveSongRepository.GetLoveSongs(user.Id);
-            Lovesongs = new ObservableCollection<SongModel>(lovesongs);
-            
-
-
+            loveSongRepository = new LoveSongRepository();
+            _lovesongs = new ObservableCollection<SongModel>();
         }
 
         public LovePageViewModel(MainWindowViewModel mainWindowViewModel)
         {
             _mainWindowViewModel = mainWindowViewModel;
-            //LoadLoveSongs();
         }
+
+        [RelayCommand]
+        public void LoadLoveSongs()
+        {
+            var user = userRepository.GetByUsername(Thread.CurrentPrincipal.Identity.Name);
+            var lovesongs = loveSongRepository.GetLoveSongs(user.Id);
+            foreach (var lovesong in lovesongs)
+            {
+                Lovesongs.Add(new SongModel()
+                {
+                    name = lovesong.name,
+                    artist_name = lovesong.artist_name,
+                    album_name = lovesong.album_name,
+                    id = lovesong.id,
+                    url = lovesong.url
+                });
+            }
+        }
+
         [RelayCommand]
         private void ChangeSongSource(string songSource)
         {
