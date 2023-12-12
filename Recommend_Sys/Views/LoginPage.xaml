@@ -8,7 +8,7 @@
         xmlns:hc="https://handyorg.github.io/handycontrol"
         xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
         mc:Ignorable="d"
-        Title="登录" Height="680" Width="480">
+        Title="登录" Height="500" Width="320">
 
     <Window.DataContext>
         <viewModel:LoginPageViewModel/>
@@ -23,16 +23,16 @@
     </Window.Visibility>
 
         <Grid>
-        <Image Source="{svgc:SvgImage Source=../Resources/img/headphones.svg}"
+        <Image Source="{svgc:SvgImage Source=../Assets/img/headphones.svg}"
                HorizontalAlignment="Center"
                VerticalAlignment="Top"
-               Height="200"
-               Margin="0,60"/>
+               Height="120"
+               Margin="0,50,0,50"/>
         <hc:TextBox Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
-                    Margin="60,300,60,0"
+                    Margin="30,210,30,0"
                     HorizontalAlignment="Stretch" VerticalAlignment="Top" 
-                    Height="60"
-                    FontSize="24"
+                    Height="50"
+                    FontSize="18"
                     TextWrapping="NoWrap" 
                     hc:InfoElement.Placeholder="用户名">
             <TextBox.InputBindings>
@@ -40,10 +40,10 @@
             </TextBox.InputBindings>
         </hc:TextBox>
         <hc:TextBox Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" 
-                    Margin="60,380,60,0"
+                    Margin="30,270,30,0"
                     HorizontalAlignment="Stretch" VerticalAlignment="Top"
-                    Height="60"
-                    FontSize="24"
+                    Height="50"
+                    FontSize="18"
                     TextWrapping="NoWrap" 
                     hc:InfoElement.Placeholder="密码">
             <TextBox.InputBindings>
@@ -51,11 +51,11 @@
             </TextBox.InputBindings>
         </hc:TextBox>
         <Button Command="{Binding LoginCommand}"
-                Margin="60,460,60,0"
+                Margin="30,330,30,0"
                 HorizontalAlignment="Stretch" 
                 VerticalAlignment="Top"
-                Height="60" 
-                FontSize="24"
+                Height="50"
+                FontSize="18"
                 Content="登录"  
                 Background="#E8E8E8"/>
     </Grid>

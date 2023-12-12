@@ -16,7 +16,7 @@
     <UserControl.Resources>
         <Style x:Key="Icon" TargetType="TextBlock">
             <Setter Property="FontSize" Value="20" />
-            <Setter Property="FontFamily" Value="../../../Resources/Fonts/#iconfont" />
+            <Setter Property="FontFamily" Value="../../../Assets/Fonts/#iconfont" />
         </Style>
     </UserControl.Resources>
 
@@ -62,7 +62,7 @@
                 <ListView.View>
                     <GridView>
                         <!-- Add CheckBox column -->
-                        <GridViewColumn Width="100" Header="Select">
+                        <GridViewColumn Width="50" Header="喜欢">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <CheckBox>

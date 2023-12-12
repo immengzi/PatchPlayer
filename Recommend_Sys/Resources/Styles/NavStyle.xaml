@@ -12,7 +12,7 @@
     <!-- 为图标定义样式 -->
     <Style x:Key="NavIcon" TargetType="TextBlock">
         <Setter Property="FontSize" Value="24" />
-        <Setter Property="FontFamily" Value="../Fonts/#iconfont" />
+        <Setter Property="FontFamily" Value="/Assets/Fonts/#iconfont" />
         <Setter Property="TextWrapping" Value="Wrap"/>
     </Style>
 </ResourceDictionary>
