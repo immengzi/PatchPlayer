@@ -78,7 +78,10 @@ namespace Recommend_Sys.ViewModels
                     HomeIcon = "\ue867";
                     break;
                 case "Love":
-                    CurrentPage = new LovePage();
+                    CurrentPage = new LovePage
+                    {
+                        DataContext = new LovePageViewModel(this)
+                    };
                     SetDefaultIcon();
                     LoveIcon = "\ue849";
                     break;

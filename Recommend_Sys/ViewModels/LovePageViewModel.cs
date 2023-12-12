@@ -30,15 +30,13 @@ namespace Recommend_Sys.ViewModels
         [ObservableProperty]
         private ObservableCollection<SongModel> _lovesongs;
 
-        public LovePageViewModel()
+        public LovePageViewModel() { }
+
+        public LovePageViewModel(MainWindowViewModel mainWindowViewModel)
         {
             userRepository = new UserRepository();
             loveSongRepository = new LoveSongRepository();
             _lovesongs = new ObservableCollection<SongModel>();
-        }
-
-        public LovePageViewModel(MainWindowViewModel mainWindowViewModel)
-        {
             _mainWindowViewModel = mainWindowViewModel;
         }
 
@@ -64,14 +62,19 @@ namespace Recommend_Sys.ViewModels
         private void ChangeSongSource(string songSource)
         {
             SongSource = songSource;
+            MessageBox.Show("当前播放的歌曲URL是" + SongSource);
         }
 
         [RelayCommand]
-        private void PlaySong(SongModel song)
+        private void PlaySong(SongModel songModel)
         {
-            if (song.url != null)
+            if (songModel.url != null)
             {
-                ChangeSongSource(song.url);
+                ChangeSongSource(songModel.url);
+            }
+            else
+            {
+                return;
             }
         }
     }
