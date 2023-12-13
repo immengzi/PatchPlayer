@@ -72,6 +72,9 @@
                                                            CommandParameter="{Binding}"/>
                                             </b:EventTrigger>
                                             <b:EventTrigger EventName="Unchecked">
+                                                <b:InvokeCommandAction Command="{Binding DataContext.RemoveFromLoveCommand, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+                                                            CommandParameter="{Binding}"/>
+                                                
                                                 <!-- Handle Unchecked event if needed -->
                                             </b:EventTrigger>
                                         </b:Interaction.Triggers>

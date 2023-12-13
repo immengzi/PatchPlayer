@@ -55,13 +55,13 @@ namespace Recommend_Sys.Repositories
             }
         }
 
-        public void DeleteLoveSong(string username, SongModel song)
+        public void DeleteLoveSong(string userId, SongModel song)
         {
             using (SqlConnection connection = GetConnection())
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand("DELETE FROM LoveSong WHERE username = @username AND song_id = @song_id", connection);
-                command.Parameters.AddWithValue("@username", username);
+                SqlCommand command = new SqlCommand("DELETE FROM LoveSongs WHERE UserId = @userId AND SongId = @song_id", connection);
+                command.Parameters.AddWithValue("@userId", userId);
                 command.Parameters.AddWithValue("@song_id", song.id);
                 command.ExecuteNonQuery();
             }
