@@ -11,6 +11,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Recommend_Sys.Models;
 using Recommend_Sys.Repositories;
+using Recommend_Sys.Services;
 
 namespace Recommend_Sys.ViewModels
 {
@@ -41,12 +42,13 @@ namespace Recommend_Sys.ViewModels
         }
 
         [RelayCommand]
-        public void LoadLoveSongs()
+        public async Task LoadLoveSongs()
         {
             var user = userRepository.GetByUsername(Thread.CurrentPrincipal.Identity.Name);
             var lovesongs = loveSongRepository.GetLoveSongs(user.Id);
             foreach (var lovesong in lovesongs)
             {
+                await UpdateSong.UpdateSongUrlAsync(lovesong);
                 Lovesongs.Add(new SongModel()
                 {
                     name = lovesong.name,
@@ -62,7 +64,7 @@ namespace Recommend_Sys.ViewModels
         private void ChangeSongSource(string songSource)
         {
             SongSource = songSource;
-            MessageBox.Show("当前播放的歌曲URL是" + SongSource);
+            //MessageBox.Show("当前播放的歌曲URL是" + SongSource);
         }
 
         [RelayCommand]
