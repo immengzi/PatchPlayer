@@ -34,7 +34,7 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <Image Source="{svgc:SvgImage Source=../Resources/img/musiclist.svg}"
+            <Image Source="{svgc:SvgImage Source=../Assets/img/musiclist.svg}"
                    Margin="10,0" Width="60" MaxHeight="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             <TextBlock
                 Grid.Column="1"

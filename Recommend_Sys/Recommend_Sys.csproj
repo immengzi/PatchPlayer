@@ -5,17 +5,17 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
-    <ApplicationIcon>Resources\img\music.ico</ApplicationIcon>
+    <ApplicationIcon>Assets\img\musiclist.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\Fonts\iconfont.ttf" />
-    <None Remove="Resources\img\headphones.svg" />
-    <None Remove="Resources\img\musiclist.svg" />
+    <None Remove="Assets\Fonts\iconfont.ttf" />
+    <None Remove="Assets\img\headphones.svg" />
+    <None Remove="Assets\img\musiclist.svg" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Resources\img\music.ico" />
+    <Content Include="Assets\img\musiclist.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,9 +30,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\Fonts\iconfont.ttf" />
-    <Resource Include="Resources\img\headphones.svg" />
-    <Resource Include="Resources\img\musiclist.svg" />
+    <Resource Include="Assets\Fonts\iconfont.ttf" />
+    <Resource Include="Assets\img\headphones.svg" />
+    <Resource Include="Assets\img\musiclist.svg" />
   </ItemGroup>
 
 </Project>

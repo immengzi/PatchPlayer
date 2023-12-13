@@ -12,7 +12,7 @@ namespace Recommend_Sys.Repositories
         private readonly string _connectionString;
         public RepositoryBase()
         {
-            _connectionString = "Server=(local); Database=MVVMLoginDb; Integrated Security=true";
+            _connectionString = "Server=(local); Database=PatchPlayerDB; Integrated Security=true";
         }
         protected SqlConnection GetConnection()
         {

@@ -16,7 +16,7 @@
     <UserControl.Resources>
         <Style x:Key="Icon" TargetType="TextBlock">
             <Setter Property="FontSize" Value="20" />
-            <Setter Property="FontFamily" Value="../../../Resources/Fonts/#iconfont" />
+            <Setter Property="FontFamily" Value="../../../Assets/Fonts/#iconfont" />
         </Style>
     </UserControl.Resources>
 
@@ -61,6 +61,24 @@
                 </b:Interaction.Triggers>
                 <ListView.View>
                     <GridView>
+                        <!-- Add CheckBox column -->
+                        <GridViewColumn Width="50" Header="喜欢">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox>
+                                        <b:Interaction.Triggers>
+                                            <b:EventTrigger EventName="Checked">
+                                                <b:InvokeCommandAction Command="{Binding DataContext.AddToLoveCommand, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+                                                           CommandParameter="{Binding}"/>
+                                            </b:EventTrigger>
+                                            <b:EventTrigger EventName="Unchecked">
+                                                <!-- Handle Unchecked event if needed -->
+                                            </b:EventTrigger>
+                                        </b:Interaction.Triggers>
+                                    </CheckBox>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                         <GridViewColumn Width="200" Header="标题" DisplayMemberBinding="{Binding name}"/>
                         <GridViewColumn Width="200" Header="歌手" DisplayMemberBinding="{Binding artist_name}"/>
                         <GridViewColumn Width="200" Header="专辑" DisplayMemberBinding="{Binding album_name}"/>

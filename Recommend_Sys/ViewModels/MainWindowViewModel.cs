@@ -43,6 +43,25 @@ namespace Recommend_Sys.ViewModels
             SetDefaultIcon();
             Navigate("Home");
             userRepository = new UserRepository();
+            GetPlaylists();
+        }
+
+        public UserModel? CurrentUser
+        {
+            get
+            {
+                var user = userRepository.GetByUsername(Thread.CurrentPrincipal.Identity.Name);
+                return user;
+            }
+        }
+        private void GetPlaylists()
+        {
+           if (CurrentUser != null)
+           {
+                LoveSongRepository loveSongRepository = new LoveSongRepository();
+                var lovesongs = loveSongRepository.GetLoveSongs(CurrentUser.Id);
+                CurrentUser.loveSongs = lovesongs;
+           }
         }
 
         [RelayCommand]
@@ -59,7 +78,10 @@ namespace Recommend_Sys.ViewModels
                     HomeIcon = "\ue867";
                     break;
                 case "Love":
-                    CurrentPage = new LovePage();
+                    CurrentPage = new LovePage
+                    {
+                        DataContext = new LovePageViewModel(this)
+                    };
                     SetDefaultIcon();
                     LoveIcon = "\ue849";
                     break;
