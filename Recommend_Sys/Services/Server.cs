@@ -11,7 +11,7 @@ namespace Recommend_Sys.Services
         /// <summary>
         /// 服务器 URL，远程或本地
         /// </summary>
-        //public const string ServerUrl = "http://ali.mengzi.li:3000";
-        public const string ServerUrl = "http://localhost:3000";
+        public const string ServerUrl = "http://ali.mengzi.li:3000";
+        //public const string ServerUrl = "http://localhost:3000";
     }
 }

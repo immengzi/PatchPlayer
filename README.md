@@ -1,6 +1,10 @@
-# Recommend_Sys（开发中）
+# Recommend_Sys
 
 一款集成推荐算法的音乐播放器，WPF + MVVM + SQL Server
+
+## 本地部署数据库
+
+执行 `PatchPlayerDB.sql ` 
 
 ## 效果图
 
