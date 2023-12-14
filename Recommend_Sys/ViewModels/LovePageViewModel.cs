@@ -79,5 +79,35 @@ namespace Recommend_Sys.ViewModels
                 return;
             }
         }
+
+        [RelayCommand]
+        private void AddToLove(SongModel songModel)
+        {
+            if (songModel.url != null)
+            {
+                LoveSongRepository loveSongRepository = new LoveSongRepository();
+                loveSongRepository.AddLoveSong(_mainWindowViewModel.CurrentUser.Id, songModel);
+                MessageBox.Show("添加成功");
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        [RelayCommand]
+        private void RemoveFromLove(SongModel songModel)
+        {
+            if (songModel.url != null)
+            {
+                LoveSongRepository loveSongRepository = new LoveSongRepository();
+                loveSongRepository.DeleteLoveSong(_mainWindowViewModel.CurrentUser.Id, songModel);
+                MessageBox.Show("删除成功");
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }

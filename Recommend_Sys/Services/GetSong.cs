@@ -39,6 +39,7 @@ namespace Recommend_Sys.Services
             JArray searchSongs = (JArray)jsonSearchResponse["result"]["songs"];
             foreach (var searchSong in searchSongs)
             {
+                Console.WriteLine(searchSong);
                 int? songId = (int?)searchSong["id"];
                 string? realSongName = (string?)searchSong["name"];
                 string? artistName = (string?)searchSong["ar"]?[0]["name"];
